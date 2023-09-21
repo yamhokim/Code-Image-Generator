@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code to Image {% block title %}{% endblock title %}</title>
+    <! Set title of project to 'Code to Image'. Empty title block can extend title wth child template>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <h1>
+      <a href="{{ url_for('code') }}">Code to Image</a>:
+      <! Links headline to URL of the code() view >
+      <span>{{ message }}</span>
+    </h1>
+    <main>{% block content %} {% endblock content %}</main>
+    <!Defines an empty content block that can be overwritten with contents from other templates>
+  </body>
+</html>
